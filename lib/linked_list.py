@@ -11,4 +11,13 @@ class LinkedList:
                 last = last.next
             last.next = val
 
-                
+    def count(self):
+        if self.head is None:
+            return 0
+        else:
+            count = 1
+            last = self.head
+            while last.next:
+                count += 1
+
+            return count
