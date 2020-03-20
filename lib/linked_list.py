@@ -12,12 +12,21 @@ class LinkedList:
             last.next = val
 
     def count(self):
-        if self.head is None:
-            return 0
-        else:
-            count = 1
-            last = self.head
-            while last.next:
-                count += 1
 
-            return count
+        count = 0
+        last = self.head
+        while last:
+            count += 1
+            last = last.next
+
+        return count
+
+    def to_string(self):
+
+        string = ""
+        last = self.head
+        while last:
+            string += f" {last.val}"
+            last = last.next
+
+        return string
