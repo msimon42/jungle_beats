@@ -4,12 +4,19 @@ class LinkedList:
 
     def append(self, val):
         if self.head is None:
-            self.head = val
+            self.head = Node(val)
         else:
             last = self.head
             while last.next:
                 last = last.next
-            last.next = val
+            last.next = Node(val)
+
+    def prepend(self, val):
+        if self.head is None:
+            self.head = Node(val)
+        else:
+            self.head.next = self.head
+            self.head = Node(val)
 
     def count(self):
 
