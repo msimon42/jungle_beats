@@ -18,6 +18,14 @@ class LinkedList:
             self.head.next = self.head
             self.head = Node(val)
 
+    def insert(self, pos, val):
+        last = self.head
+        for i in range(0, pos):
+            last = last.next
+
+        last.next = last
+        last = Node(val)
+
     def count(self):
 
         count = 0
