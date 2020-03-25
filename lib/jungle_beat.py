@@ -8,4 +8,7 @@ class JungleBeat:
         for item in data_list:
             self.list.append(item)
 
-        return data    
+        return data
+
+    def count(self):
+        return self.list.count()
