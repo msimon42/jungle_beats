@@ -26,6 +26,18 @@ class LinkedList:
         last.next = last
         last = Node(val)
 
+    def find(self, first, amt):
+        last = self.head
+        str = ""
+        for i in range(0, first):
+            last = last.next
+
+        for i in range(0, amt):
+            str += f"{last.val} "
+            last = last.next
+
+        return str
+
     def count(self):
 
         count = 0
