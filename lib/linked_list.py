@@ -44,9 +44,7 @@ class LinkedList:
             if last.val == value:
                 return True
 
-        return False        
-
-
+        return False
 
     def count(self):
 
@@ -67,3 +65,12 @@ class LinkedList:
             last = last.next
 
         return string
+
+    def pop(self):
+        node = self.head
+        while node.next.next:
+            node = node.next
+
+        value = node.next.val
+        node.next = None
+        return value        
