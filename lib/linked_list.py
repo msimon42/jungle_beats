@@ -38,6 +38,16 @@ class LinkedList:
 
         return str
 
+    def includes(self, value):
+        last = self.head
+        while last.next:
+            if last.val == value:
+                return True
+
+        return False        
+
+
+
     def count(self):
 
         count = 0
