@@ -6,10 +6,10 @@ class LinkedList:
         if self.head is None:
             self.head = Node(val)
         else:
-            last = self.head
-            while last.next:
-                last = last.next
-            last.next = Node(val)
+            current_node = self.head
+            while current_node.next:
+                current_node = current_node.next
+            current_node.next = Node(val)
 
     def prepend(self, val):
         if self.head is None:
@@ -19,29 +19,29 @@ class LinkedList:
             self.head = Node(val)
 
     def insert(self, pos, val):
-        last = self.head
+        current_node = self.head
         for i in range(0, pos):
-            last = last.next
+            current_node = current_node.next
 
-        last.next = last
-        last = Node(val)
+        current_node.next = current_node
+        current_node = Node(val)
 
     def find(self, first, amt):
-        last = self.head
+        current_node = self.head
         str = ""
         for i in range(0, first):
-            last = last.next
+            current_node = current_node.next
 
         for i in range(0, amt):
-            str += f"{last.val} "
-            last = last.next
+            str += f"{current_node.val} "
+            current_node = current_node.next
 
         return str
 
     def includes(self, value):
-        last = self.head
-        while last.next:
-            if last.val == value:
+        current_node = self.head
+        while current_node.next:
+            if current_node.val == value:
                 return True
 
         return False
@@ -49,20 +49,20 @@ class LinkedList:
     def count(self):
 
         count = 0
-        last = self.head
-        while last:
+        current_node = self.head
+        while current_node:
             count += 1
-            last = last.next
+            current_node = current_node.next
 
         return count
 
     def to_string(self):
 
         string = ""
-        last = self.head
-        while last:
-            string += f" {last.val}"
-            last = last.next
+        current_node = self.head
+        while current_node:
+            string += f" {current_node.val}"
+            current_node = current_node.next
 
         return string
 
@@ -73,4 +73,4 @@ class LinkedList:
 
         value = node.next.val
         node.next = None
-        return value        
+        return value
